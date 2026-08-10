@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-security",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Audit an Apps Script web app that executes as the owner. The client sends role='admin', server functions trust it, and user comments are rendered with innerHTML and later exported to Sheets.",
+      "expected_output": "Prioritized findings and fixes for broken authorization, XSS, formula injection, execution identity, scopes, safe errors, regression tests, and deployment settings.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Review an authorized Apps Script webhook integration. The shared secret is in Index.html, arbitrary callback URLs are accepted, and failed POSTs retry forever.",
+      "expected_output": "A safe review covering secret rotation/storage, URL allowlisting, signature/replay verification, bounded retry and idempotency, logging redaction, and residual platform constraints.",
+      "files": []
+    }
+  ]
+}

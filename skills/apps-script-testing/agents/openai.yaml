@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script Testing"
+  short_description: "Add unit, integration, and deployment tests"
+  brand_color: "#5F6368"
+  default_prompt: "Use $apps-script-testing to add a risk-based test strategy and regression suite."
+policy:
+  allow_implicit_invocation: true

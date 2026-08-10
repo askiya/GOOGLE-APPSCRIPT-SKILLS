@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script Automation"
+  short_description: "Build reliable triggers and scheduled workflows"
+  brand_color: "#FBBC04"
+  default_prompt: "Use $apps-script-automation to make this trigger workflow reliable and recoverable."
+policy:
+  allow_implicit_invocation: true

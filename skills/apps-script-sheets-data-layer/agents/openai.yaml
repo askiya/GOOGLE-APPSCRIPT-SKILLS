@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script Sheets Data Layer"
+  short_description: "Build reliable Spreadsheet-backed repositories"
+  brand_color: "#34A853"
+  default_prompt: "Use $apps-script-sheets-data-layer to design or implement this Sheets data layer."
+policy:
+  allow_implicit_invocation: true

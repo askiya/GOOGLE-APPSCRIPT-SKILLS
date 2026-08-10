@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script PWA"
+  short_description: "Design feasible installable and offline experiences"
+  brand_color: "#00ACC1"
+  default_prompt: "Use $apps-script-pwa to assess feasibility and design this Apps Script PWA."
+policy:
+  allow_implicit_invocation: true

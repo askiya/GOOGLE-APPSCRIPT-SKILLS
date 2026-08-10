@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-testing",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add tests to an Apps Script order workflow whose functions directly call SpreadsheetApp, Session, Utilities, and MailApp. We need CI without sending email.",
+      "expected_output": "Minimal dependency seams, pure policy tests, narrow fakes, no real side effects, contract tests, CI commands, and a separate deployment smoke plan.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create a regression test plan for a duplicate onFormSubmit incident and an authorization failure that only happens in the deployed web app.",
+      "expected_output": "Idempotency and trigger tests plus test-deployment cases for execution identity, roles, consent, duplicate delivery, observability, and safe synthetic fixtures.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "name": "google-appscript-skills",
+  "version": "1.0.0",
+  "description": "A production-focused collection of agent skills for building, securing, testing, optimizing, and deploying Google Apps Script applications.",
+  "author": {
+    "name": "Askiya",
+    "url": "https://github.com/askiya"
+  },
+  "homepage": "https://github.com/askiya/GOOGLE-APPSCRIPT-SKILLS",
+  "repository": "https://github.com/askiya/GOOGLE-APPSCRIPT-SKILLS.git",
+  "license": "MIT",
+  "keywords": [
+    "google-apps-script",
+    "apps-script",
+    "google-workspace",
+    "agent-skills",
+    "codex",
+    "clasp"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Google Apps Script Skills",
+    "shortDescription": "Build production-ready Apps Script systems",
+    "longDescription": "Fourteen focused skills for architecture, web apps, Sheets data layers, automation, UI/UX, PWA planning, security, performance, testing, clasp deployment, integrations, SaaS, AI, and debugging.",
+    "developerName": "Askiya",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/askiya/GOOGLE-APPSCRIPT-SKILLS",
+    "defaultPrompt": [
+      "Design a production-ready Apps Script application.",
+      "Audit this Apps Script project for security and performance.",
+      "Set up clasp, tests, and deployment for this project."
+    ],
+    "brandColor": "#0F9D58"
+  }
+}

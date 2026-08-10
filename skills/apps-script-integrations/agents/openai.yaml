@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script Integrations"
+  short_description: "Connect Workspace and external APIs reliably"
+  brand_color: "#1A73E8"
+  default_prompt: "Use $apps-script-integrations to implement this reliable Apps Script integration."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,19 @@
+{
+  "name": "google-appscript-skills",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agent skills for production-grade Google Apps Script development",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-skills.mjs",
+    "test": "npm run validate"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/askiya/GOOGLE-APPSCRIPT-SKILLS.git"
+  }
+}

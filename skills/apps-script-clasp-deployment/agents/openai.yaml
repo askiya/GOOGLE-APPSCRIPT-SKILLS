@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script clasp Deployment"
+  short_description: "Set up local development and safe releases"
+  brand_color: "#4285F4"
+  default_prompt: "Use $apps-script-clasp-deployment to configure and verify this Apps Script release workflow."
+policy:
+  allow_implicit_invocation: true

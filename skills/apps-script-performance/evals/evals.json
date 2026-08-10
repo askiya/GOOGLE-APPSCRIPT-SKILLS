@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-performance",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "This Apps Script loops through 50,000 rows, calls getValue and setValue for every cell, and times out. Optimize it without changing results.",
+      "expected_output": "Instrumentation, batched range operations, in-memory maps, chunk/continuation only if still needed, idempotency, realistic benchmarks, and capacity risks.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "An HTML Service dashboard makes 18 google.script.run calls at startup and feels slow. Some reference data changes hourly and some rows are user-private.",
+      "expected_output": "A measured call graph, composed view models, safe identity-aware cache decisions, pagination, parallelism boundaries, loading UX, and before/after evidence.",
+      "files": []
+    }
+  ]
+}

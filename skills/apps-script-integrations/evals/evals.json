@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-integrations",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Sync 15,000 CRM contacts nightly into Google Sheets through a paginated REST API that returns 429 and 503. Updates must not create duplicates.",
+      "expected_output": "A narrow adapter, pagination and batching, checkpointing, capped backoff with jitter, idempotent upserts, safe credentials/logging, quota notes, fixtures, and recovery.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Build a Calendar integration that creates events for approved requests. The web app executes as owner but events should reflect the right organizer and least privilege.",
+      "expected_output": "An identity and scope analysis before code, explicit service choice, authorization constraints, idempotent event mapping, error handling, test-account verification, and operational ownership.",
+      "files": []
+    }
+  ]
+}

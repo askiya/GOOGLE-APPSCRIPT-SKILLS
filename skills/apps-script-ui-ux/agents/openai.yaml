@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script UI/UX"
+  short_description: "Create accessible, responsive HTML Service UIs"
+  brand_color: "#A142F4"
+  default_prompt: "Use $apps-script-ui-ux to design and implement this Apps Script interface."
+policy:
+  allow_implicit_invocation: true

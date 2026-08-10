@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-clasp-deployment",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Convert an editor-only Apps Script web app into a Git/clasp project with test and production projects, npm tests, and safe release steps.",
+      "expected_output": "A source layout, secret-safe clasp configuration, manifest review, target checks, test project flow, CI gates, versioned deployment, smoke tests, and rollback.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our developer ran clasp push but production still serves old code. Diagnose this without overwriting unknown remote changes.",
+      "expected_output": "A safe diagnosis distinguishing source push from versioned deployment, inspecting status/config/deployments, preserving local/remote work, and giving verified redeploy and rollback steps.",
+      "files": []
+    }
+  ]
+}

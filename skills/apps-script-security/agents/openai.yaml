@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script Security"
+  short_description: "Threat-model and harden Apps Script deployments"
+  brand_color: "#EA4335"
+  default_prompt: "Use $apps-script-security to audit and harden this authorized Apps Script project."
+policy:
+  allow_implicit_invocation: true

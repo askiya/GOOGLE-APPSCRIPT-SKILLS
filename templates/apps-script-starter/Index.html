@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <base target="_top">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apps Script Starter</title>
+    <style>
+      :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+      body { margin: 0; padding: 2rem; }
+      main { max-width: 40rem; margin: auto; }
+      form { display: grid; gap: 0.75rem; }
+      input, button { font: inherit; padding: 0.75rem; }
+      :focus-visible { outline: 3px solid #1a73e8; outline-offset: 2px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Apps Script Starter</h1>
+      <form id="greeting-form">
+        <label for="name">Name</label>
+        <input id="name" name="name" maxlength="80" required>
+        <button id="submit" type="submit">Greet</button>
+      </form>
+      <p id="status" role="status" aria-live="polite"></p>
+    </main>
+    <script>
+      const form = document.querySelector('#greeting-form');
+      const submit = document.querySelector('#submit');
+      const status = document.querySelector('#status');
+
+      function callServer(name, ...args) {
+        return new Promise((resolve, reject) => {
+          google.script.run
+            .withSuccessHandler(resolve)
+            .withFailureHandler(reject)[name](...args);
+        });
+      }
+
+      form.addEventListener('submit', async event => {
+        event.preventDefault();
+        submit.disabled = true;
+        status.textContent = 'Loading…';
+        try {
+          const result = await callServer('greet', { name: form.elements.name.value });
+          status.textContent = result.ok ? result.data.message : result.error.message;
+        } catch (error) {
+          status.textContent = 'The request failed. Please try again.';
+        } finally {
+          submit.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>

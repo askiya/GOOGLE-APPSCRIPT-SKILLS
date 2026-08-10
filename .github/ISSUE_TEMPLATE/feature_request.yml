@@ -1,0 +1,30 @@
+name: Skill proposal
+description: Propose a new skill or a meaningful enhancement.
+title: "[Proposal]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Repeated workflow or problem
+      description: Explain why an existing skill does not cover it.
+    validations:
+      required: true
+  - type: textarea
+    id: triggers
+    attributes:
+      label: Example trigger prompts
+      description: Provide at least two realistic user requests.
+    validations:
+      required: true
+  - type: textarea
+    id: outputs
+    attributes:
+      label: Expected outputs and verification
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Apps Script constraints and risks
+      description: Mention authorization, quotas, identity, data sensitivity, or platform limits.

@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-architect",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Design a leave approval web app for 300 employees and three approval levels. Use Apps Script and Sheets, include roles, reminders, audit history, and a mobile UI.",
+      "expected_output": "A complete but implementation-neutral architecture covering identity, authorization, state transitions, schema, trigger ownership, concurrency, quotas, failures, file plan, phases, and open decisions.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We have an Apps Script that imports 80,000 CRM rows nightly and now times out. Decide whether to keep Sheets or move storage, and give us a migration-ready plan.",
+      "expected_output": "An evidence-based architecture review with access patterns, scale thresholds, continuation design, storage alternatives, phased migration, rollback, and verification gates.",
+      "files": []
+    }
+  ]
+}

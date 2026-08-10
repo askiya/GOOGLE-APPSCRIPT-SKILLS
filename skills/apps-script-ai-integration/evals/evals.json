@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-ai-integration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Add an AI function to Apps Script that summarizes support tickets from Sheets and emails drafts. Tickets contain customer names and sometimes payment details.",
+      "expected_output": "A data-minimizing server adapter, current provider-doc verification, secret storage, structured output, safe logs, budget, redaction, human approval before email, fallback, and eval cases.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our Apps Script lets an AI response choose a callback URL and then UrlFetchApp fetches it. The response is also inserted into innerHTML.",
+      "expected_output": "A clear model-output trust analysis, fixed/allowlisted destinations, schema validation, output encoding, authorization before side effects, regression tests, and incident-oriented remediation.",
+      "files": []
+    }
+  ]
+}

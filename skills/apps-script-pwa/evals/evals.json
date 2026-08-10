@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-pwa",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Turn our Apps Script /exec web app into an installable offline-first PWA with a service worker and background sync. Keep the existing URL.",
+      "expected_output": "A feasibility-first answer that verifies origin, redirects, scope, headers, and browser support; recommends a topology; and only then specifies cache, queue, conflicts, auth, updates, and tests.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Field staff must capture inspections offline and sync to an Apps Script backend later, sometimes after their Google session expires.",
+      "expected_output": "A privacy-aware local queue and server idempotency design with pending UX, reauthorization, conflict resolution, bounded retry, data retention, and cross-browser test cases.",
+      "files": []
+    }
+  ]
+}

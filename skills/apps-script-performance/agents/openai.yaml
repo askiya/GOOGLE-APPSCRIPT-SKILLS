@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script Performance"
+  short_description: "Optimize service calls, quotas, and timeouts"
+  brand_color: "#F9AB00"
+  default_prompt: "Use $apps-script-performance to measure and optimize this Apps Script bottleneck."
+policy:
+  allow_implicit_invocation: true

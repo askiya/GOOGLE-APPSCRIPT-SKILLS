@@ -1,0 +1,7 @@
+interface:
+  display_name: "Replace with display name"
+  short_description: "Replace with a concise user-facing description"
+  brand_color: "#0F9D58"
+  default_prompt: "Use $replace-with-skill-name to complete this task."
+policy:
+  allow_implicit_invocation: true

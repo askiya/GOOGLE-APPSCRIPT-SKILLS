@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-debugging-migration",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "A function works from the Apps Script editor but its installable trigger fails with 'Authorization is required'. It started after adding DriveApp.",
+      "expected_output": "An execution-identity and scope diagnosis, evidence checks, trigger-owner reauthorization procedure, manifest review, safe regression check, and no speculative rewrite.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Migrate a legacy Rhino Apps Script with old libraries and a production web app to V8 without a big-bang rewrite.",
+      "expected_output": "An inventory, behavior-capture plan, staged V8 conversion, library/scope/entry-point checks, separate test deployment, smoke matrix, rollback, and release evidence.",
+      "files": []
+    }
+  ]
+}

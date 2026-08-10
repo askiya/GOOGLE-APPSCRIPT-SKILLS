@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script SaaS"
+  short_description: "Design tenant isolation and product lifecycle"
+  brand_color: "#185ABC"
+  default_prompt: "Use $apps-script-saas to design or audit this multi-tenant Apps Script product."
+policy:
+  allow_implicit_invocation: true

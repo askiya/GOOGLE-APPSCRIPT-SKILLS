@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-saas",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Design a multi-tenant Apps Script CRM for 80 small businesses using Sheets. Users can belong to two businesses and each tenant has plan limits.",
+      "expected_output": "A trusted membership model, topology tradeoff, tenant-scoped repositories/cache/jobs/audit, role and entitlement matrix, lifecycle, concurrency-safe metering, tests, and migration threshold.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Audit our shared-sheet SaaS. The browser sends tenantId, queries filter by it, and ScriptCache stores customer lists using the key 'customers'.",
+      "expected_output": "High-priority cross-tenant findings, server-derived context, mandatory resource ownership checks, partitioned caching, job/export coverage, regression tests, and residual risk of shared Sheets.",
+      "files": []
+    }
+  ]
+}

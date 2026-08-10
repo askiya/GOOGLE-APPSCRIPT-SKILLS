@@ -1,0 +1,46 @@
+name: Skill bug report
+description: Report incorrect, unsafe, or incomplete behavior in a skill or repository tool.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Skill instructions
+        - Installer
+        - Validator or CI
+        - Documentation
+        - Plugin metadata
+    validations:
+      required: true
+  - type: input
+    id: skill
+    attributes:
+      label: Skill name
+      placeholder: apps-script-security
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Sanitized prompt and project context
+      description: Remove Script IDs, deployment URLs, tokens, credentials, and personal data.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: validation
+    attributes:
+      label: Validation output
+      description: Paste the output of npm test when relevant.

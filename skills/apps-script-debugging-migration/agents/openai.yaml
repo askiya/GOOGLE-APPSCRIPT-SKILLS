@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script Debugging & Migration"
+  short_description: "Diagnose failures and migrate legacy projects"
+  brand_color: "#5F6368"
+  default_prompt: "Use $apps-script-debugging-migration to diagnose this failure from evidence."
+policy:
+  allow_implicit_invocation: true

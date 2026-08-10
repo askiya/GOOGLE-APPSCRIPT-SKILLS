@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-sheets-data-layer",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Refactor a 12,000-row customer sheet where CRUD code hardcodes column numbers and uses the row number as the customer ID.",
+      "expected_output": "A migration-safe repository with stable IDs, header mapping, batch I/O, integrity checks, rollback, and tests for schema drift and duplicates.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Two approvers can update the same order at once and one update silently overwrites the other. Fix the Apps Script/Sheets data layer.",
+      "expected_output": "A narrow lock plus re-read, optimistic version check, validated state transition, auditable mutation, safe client conflict response, and concurrency tests.",
+      "files": []
+    }
+  ]
+}

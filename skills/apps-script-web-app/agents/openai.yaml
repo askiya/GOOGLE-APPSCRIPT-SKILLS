@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script Web App"
+  short_description: "Build secure HTML Service and HTTP interfaces"
+  brand_color: "#4285F4"
+  default_prompt: "Use $apps-script-web-app to implement this Apps Script web application flow."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-web-app",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build an Apps Script HTML Service CRUD page for equipment requests. Existing backend functions return Date objects and the UI sometimes submits twice.",
+      "expected_output": "Thin server facades, JSON-safe serialization, Promise-based google.script.run handling, duplicate-submit prevention, all UI states, authorization checks, and a deployment smoke-test plan.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Create a doPost endpoint that accepts payment-provider webhooks and writes verified events to Sheets. The provider retries requests.",
+      "expected_output": "A feasibility and security-aware endpoint design covering signature verification constraints, idempotency, validation, safe responses, locking, replay behavior, logging, and test cases.",
+      "files": []
+    }
+  ]
+}

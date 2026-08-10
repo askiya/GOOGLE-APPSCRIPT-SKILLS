@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script Architect"
+  short_description: "Design production-ready Apps Script systems"
+  brand_color: "#0F9D58"
+  default_prompt: "Use $apps-script-architect to design this Apps Script system before implementation."
+policy:
+  allow_implicit_invocation: true

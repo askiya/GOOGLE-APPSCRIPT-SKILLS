@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-automation",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "A daily Apps Script emails overdue invoices, but rerunning after a timeout sends duplicates. Redesign it for 25,000 rows.",
+      "expected_output": "A batch and continuation design with stable idempotency keys, checkpointing, bounded retries, overlap protection, safe logging, trigger ownership, and recovery controls.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Our installable onFormSubmit trigger sometimes fails after the owner changes teams. Diagnose the ownership and authorization model and make setup reproducible.",
+      "expected_output": "An ownership-aware diagnosis, idempotent setup/cleanup functions, required scopes, reauthorization steps, duplicate handling, and operational documentation.",
+      "files": []
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "skill_name": "apps-script-ui-ux",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Redesign an Apps Script inventory dashboard used mostly on phones. It has a 14-column table, slow loading, no empty state, and tiny action buttons.",
+      "expected_output": "A task-led mobile information architecture, responsive data strategy, full async state model, accessible controls, performance plan, implementation changes, and verification matrix.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Make our Apps Script approval dialog keyboard accessible. Focus is lost after google.script.run returns and validation is only shown with red borders.",
+      "expected_output": "Semantic dialog behavior, focus management/restoration, labeled errors, status announcements, non-color cues, asynchronous state handling, and keyboard tests.",
+      "files": []
+    }
+  ]
+}

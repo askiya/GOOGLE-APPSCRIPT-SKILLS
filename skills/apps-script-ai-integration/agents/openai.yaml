@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script AI Integration"
+  short_description: "Connect AI models with privacy and output controls"
+  brand_color: "#7C4DFF"
+  default_prompt: "Use $apps-script-ai-integration to design this secure, evaluated AI workflow."
+policy:
+  allow_implicit_invocation: true
