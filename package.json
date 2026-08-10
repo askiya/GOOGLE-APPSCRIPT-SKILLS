@@ -1,12 +1,12 @@
 {
   "name": "google-appscript-skills",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "private": true,
   "description": "Agent skills for production-grade Google Apps Script development",
   "type": "module",
   "scripts": {
     "validate": "node scripts/validate-skills.mjs",
-    "test": "npm run validate"
+    "test": "npm run validate && node --test skills/apps-script-ui-ux/scripts/audit-html.test.mjs"
   },
   "engines": {
     "node": ">=20"

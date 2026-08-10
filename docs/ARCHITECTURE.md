@@ -30,6 +30,8 @@ This replaces the previous approach of loading thousands of lines of unrelated i
 ## Design boundaries
 
 - Architecture chooses system boundaries; implementation skills write the relevant layer.
+- Design research gathers attributed evidence and produces an original brief; UI/UX turns the approved brief into accessible implementation.
+- Third-party UI repositories remain research inputs, not vendored dependencies; license and framework compatibility are decided before any code or asset enters a skill.
 - Security reviews every boundary but does not replace functional design.
 - PWA guidance treats Apps Script as a backend or origin with constraints; it does not promise unsupported service-worker behavior.
 - SaaS guidance requires tenant isolation in every repository query and mutation.

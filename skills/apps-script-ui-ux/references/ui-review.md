@@ -1,5 +1,7 @@
 # UI review checklist
 
+Run `node ../scripts/audit-html.mjs <file-or-directory>` from this reference directory when local HTML is available, then verify every static finding in context. Automated checks complement rather than replace the manual review below.
+
 ## Flow
 
 - Primary action is obvious and matches the user's current task.

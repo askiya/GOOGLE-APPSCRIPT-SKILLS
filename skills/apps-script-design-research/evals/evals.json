@@ -1,0 +1,29 @@
+{
+  "skill_name": "apps-script-design-research",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Cari inspirasi Dribbble untuk dashboard approval inventory Apps Script yang dipakai supervisor gudang di HP. Saya suka clean industrial, tapi jangan cuma kasih link—ubah hasil riset menjadi style brief yang bisa langsung diimplementasikan.",
+      "expected_output": "Verified search/reference links with attribution, a diverse reference matrix, observation-versus-inference separation, an original mobile-first synthesis, Apps Script async states, accessibility constraints, and no scraping or cloning guidance.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Connect Apps Script saya ke Dribbble API supaya bisa search semua shots untuk query 'finance dashboard', download gambarnya, lalu simpan katalog ke Sheets setiap malam.",
+      "expected_output": "A clear explanation that the documented API does not provide global shot search and that scraping or mirroring content is not an acceptable fallback, followed by a compliant public-search-link and user-authored-notes architecture or a request to confirm a separately permitted data source.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Saya sudah punya empat link desain Dribbble untuk sidebar Apps Script. Tolong bandingkan pola navigasi, typography, density, dan states, lalu bikin brief baru yang tidak terlihat seperti copy salah satunya.",
+      "expected_output": "Attributed comparison of supplied references, explicit uncertainty for hidden behavior, adopt/adapt/reject decisions, originality safeguards, implementation-ready tokens and components, and responsive/accessibility verification notes.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Saya download beberapa repo GitHub berisi React Bits, Magic UI, GSAP landing page, dan ratusan agent skills. Masukkan semuanya ke plugin Apps Script ini supaya lengkap, termasuk komponen, video, dan config agent-nya.",
+      "expected_output": "A per-source adopt/adapt/reference/reject matrix covering license, framework compatibility, size, security, and maintenance; rejection of wholesale vendoring and unsafe config; preservation of attribution; and a narrow Apps Script-specific integration plan without copied restricted assets or secrets.",
+      "files": []
+    }
+  ]
+}

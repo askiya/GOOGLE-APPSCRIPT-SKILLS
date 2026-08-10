@@ -4,7 +4,7 @@
 
 # Google Apps Script Skills
 
-Koleksi **14 agent skills** modular untuk merancang, membangun, mengamankan, menguji, mengoptimalkan, dan men-deploy aplikasi Google Apps Script yang siap produksi.
+Koleksi **15 agent skills** modular untuk merancang, meriset arah visual, membangun, mengamankan, menguji, mengoptimalkan, dan men-deploy aplikasi Google Apps Script yang siap produksi.
 
 [![Validate](https://github.com/askiya/GOOGLE-APPSCRIPT-SKILLS/actions/workflows/validate.yml/badge.svg)](https://github.com/askiya/GOOGLE-APPSCRIPT-SKILLS/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -31,6 +31,7 @@ Repository ini mengubah empat prompt besar yang bercampur menjadi skill kecil da
 | [`apps-script-web-app`](skills/apps-script-web-app/) | Membangun HTML Service, `doGet`/`doPost`, ContentService API, dan bridge `google.script.run`. |
 | [`apps-script-sheets-data-layer`](skills/apps-script-sheets-data-layer/) | Menjadikan Sheets sebagai data layer dengan schema, batch I/O, locks, index, dan migration. |
 | [`apps-script-automation`](skills/apps-script-automation/) | Membuat trigger, workflow terjadwal/event-driven, queue, retry, dan idempotency. |
+| [`apps-script-design-research`](skills/apps-script-design-research/) | Mencari inspirasi UI/UX dari Dribbble secara aman dan mengubahnya menjadi brief desain orisinal yang siap diimplementasikan. |
 | [`apps-script-ui-ux`](skills/apps-script-ui-ux/) | Mendesain UI responsif, accessible, cepat, dan konsisten untuk HTML Service. |
 | [`apps-script-pwa`](skills/apps-script-pwa/) | Merencanakan pengalaman installable/offline sambil menangani batas hosting Apps Script secara jujur. |
 | [`apps-script-security`](skills/apps-script-security/) | Melakukan threat model, audit auth/authz, scope OAuth, secret, input, output, dan abuse controls. |
@@ -206,6 +207,12 @@ dan mengembalikan envelope {ok,data,error,meta} yang aman.
 ```
 
 ```text
+$apps-script-design-research
+Cari inspirasi Dribbble untuk dashboard inventory mobile, lalu buat style brief
+orisinal lengkap dengan sumber, token, komponen, dan accessibility checks.
+```
+
+```text
 $apps-script-ui-ux
 Buat dashboard responsive mobile-first, keyboard accessible,
 punya loading/empty/error/success states, dan tidak memakai inline secret.
@@ -298,6 +305,33 @@ Sheets / Drive / Gmail / Calendar
 ```
 
 Jangan menjanjikan offline write atau background sync sebelum mendefinisikan local queue, deduplication, conflict resolution, auth behavior, dan retry limits.
+
+## Riset desain dengan Dribbble
+
+Gunakan `apps-script-design-research` untuk membuat query pencarian, membuka hasil publik Dribbble, mencatat link dan atribusi, lalu mengubah pola yang relevan menjadi brief desain orisinal. Mode ini tidak membutuhkan API key.
+
+API Dribbble v2 memerlukan OAuth dan dokumentasi shots-nya berfokus pada resource milik user terautentikasi; API tersebut bukan endpoint pencarian global untuk inspirasi. Jangan menggantinya dengan scraping `UrlFetchApp`, download massal, atau katalog hasil mirror. Untuk riset, simpan catatan buatan user dan URL sumber, bukan salinan gambar Dribbble.
+
+Contoh pemakaian:
+
+```text
+$apps-script-design-research
+Riset 5-8 referensi untuk approval dashboard yang data-dense dan mobile-friendly.
+Bandingkan hierarchy, layout, typography, components, dan states; kemudian
+hasilkan arahan baru yang tidak menyalin satu desain pun.
+```
+
+## Audit dan polish UI Apps Script
+
+`apps-script-ui-ux` juga mencakup release audit, hardening untuk data ekstrem dan jaringan lambat, purposeful motion, reduced-motion behavior, serta bounded visual QA. Skill ini membawa auditor HTML dependency-free:
+
+```bash
+node skills/apps-script-ui-ux/scripts/audit-html.mjs path/to/Index.html
+```
+
+Gunakan `--json` untuk output terstruktur atau `--strict` agar proses gagal ketika temuan P1 masih ada. Auditor memeriksa kandidat masalah secara statis; agent tetap harus memverifikasi konteks sebelum mengubah kode.
+
+Repo komponen pihak ketiga tidak di-vendor secara massal. Setiap sumber GitHub harus diklasifikasikan sebagai adopt, adapt, reference, atau reject berdasarkan lisensi, kompatibilitas HTML Service, keamanan, ukuran, dan maintenance. Lihat [third-party research notices](docs/THIRD-PARTY-NOTICES.md).
 
 ## Struktur repository
 

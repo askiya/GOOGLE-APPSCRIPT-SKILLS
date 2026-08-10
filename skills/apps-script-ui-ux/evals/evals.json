@@ -12,6 +12,24 @@
       "prompt": "Make our Apps Script approval dialog keyboard accessible. Focus is lost after google.script.run returns and validation is only shown with red borders.",
       "expected_output": "Semantic dialog behavior, focus management/restoration, labeled errors, status announcements, non-color cues, asynchronous state handling, and keyboard tests.",
       "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Implement a polished Apps Script CRM dashboard inspired by Dribbble. I have not chosen references yet and I do not want the result to look copied.",
+      "expected_output": "Coordination with apps-script-design-research before implementation, an original evidence-based visual brief, reusable design tokens and components, full asynchronous states, accessibility safeguards, and responsive verification.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Audit and polish this Apps Script admin UI before release. It looks generic, nests cards inside cards, breaks with long Indonesian names, has no forbidden state, and only works when google.script.run returns quickly.",
+      "expected_output": "An evidence-based prioritized audit, operational-surface decisions, removal or justification of generic patterns, resilient long-content and async behavior, permission and recovery states, implementation changes, and bounded desktop/mobile verification.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "Make my Apps Script approval dashboard feel like Magic UI: smooth-scroll every panel, add animated gradients and WebGL particles, then run a GSAP entrance timeline before users can click anything.",
+      "expected_output": "A compatibility and purpose gate, rejection of task-blocking or iframe-risky effects, a lightweight original CSS or Web Animations alternative, a motion budget, reduced-motion behavior, idle cleanup, and performance/accessibility verification.",
+      "files": []
     }
   ]
 }

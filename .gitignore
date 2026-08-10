@@ -25,3 +25,6 @@ dist/
 # Local skill/plugin test output
 *-workspace/
 feedback.json
+
+# Local upstream research snapshots (never vendor wholesale)
+REPO GITHUB/

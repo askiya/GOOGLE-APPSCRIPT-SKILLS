@@ -2,7 +2,7 @@
 
 # Google Apps Script Skills
 
-A production-focused collection of 14 modular agent skills for designing, building, securing, testing, optimizing, and deploying Google Apps Script applications.
+A production-focused collection of 15 modular agent skills for researching visual direction, designing, building, securing, testing, optimizing, and deploying Google Apps Script applications.
 
 [Bahasa Indonesia](README.md) · [Implementation guide](docs/IMPLEMENTATION-GUIDE.md) · [Contributing](CONTRIBUTING.md)
 
@@ -14,6 +14,7 @@ A production-focused collection of 14 modular agent skills for designing, buildi
 | [`apps-script-web-app`](skills/apps-script-web-app/) | HTML Service, web apps, ContentService endpoints, and `google.script.run`. |
 | [`apps-script-sheets-data-layer`](skills/apps-script-sheets-data-layer/) | Schemas, repositories, batch I/O, locking, indexes, and migrations in Sheets. |
 | [`apps-script-automation`](skills/apps-script-automation/) | Triggers, scheduled/event workflows, queues, retries, and idempotency. |
+| [`apps-script-design-research`](skills/apps-script-design-research/) | Safe Dribbble inspiration research translated into original, implementation-ready UI briefs. |
 | [`apps-script-ui-ux`](skills/apps-script-ui-ux/) | Responsive, accessible, fast HTML Service experiences. |
 | [`apps-script-pwa`](skills/apps-script-pwa/) | PWA feasibility, installability, offline design, and hosting boundaries. |
 | [`apps-script-security`](skills/apps-script-security/) | Threat modeling, auth, authorization, scopes, secrets, validation, and abuse controls. |
@@ -74,6 +75,14 @@ Node.js 20+ is required; there are no package dependencies.
 ```bash
 npm test
 ```
+
+`apps-script-ui-ux` includes a dependency-free static audit for local Apps Script HTML:
+
+```bash
+node skills/apps-script-ui-ux/scripts/audit-html.mjs path/to/Index.html --strict
+```
+
+Third-party UI repositories are research inputs rather than vendored dependencies. Code and assets must pass license, HTML Service compatibility, security, size, and maintenance checks; see the [third-party research notices](docs/THIRD-PARTY-NOTICES.md).
 
 ## Safety notes
 

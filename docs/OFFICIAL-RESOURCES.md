@@ -21,3 +21,15 @@ Use official documentation to verify behavior that can change over time.
 - [Installable triggers](https://developers.google.com/apps-script/guides/triggers/installable)
 - [clasp](https://developers.google.com/apps-script/guides/clasp)
 - [Troubleshooting](https://developers.google.com/apps-script/guides/support/troubleshooting)
+
+## Dribbble design research
+
+- [Dribbble API v2 overview](https://developer.dribbble.com/v2/)
+- [Dribbble OAuth](https://developer.dribbble.com/v2/oauth/)
+- [Dribbble shots endpoints](https://developer.dribbble.com/v2/shots/)
+- [Dribbble API terms and guidelines](https://developer.dribbble.com/terms/)
+
+## Third-party design research
+
+- [Third-party research notices](THIRD-PARTY-NOTICES.md)
+- [Impeccable](https://github.com/pbakaus/impeccable)

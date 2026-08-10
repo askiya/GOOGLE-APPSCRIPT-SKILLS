@@ -4,6 +4,19 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 
 ## [Unreleased]
 
+### Added
+
+- `apps-script-design-research` for attributable Dribbble inspiration research and original, implementation-ready UI briefs.
+- Dribbble connection guidance covering public search, OAuth boundaries, content rights, and anti-scraping safeguards.
+- Apps Script-specific UI craft, hardening, motion, and third-party source-compatibility playbooks.
+- A dependency-free static HTML auditor for accessibility, motion, injection, and `google.script.run` integration checks.
+- Third-party research notices and an explicit no-vendoring policy for local upstream snapshots.
+
+### Changed
+
+- Coordinated `apps-script-ui-ux` with the new research workflow and updated the plugin catalog to fifteen skills.
+- Expanded `apps-script-ui-ux` to cover polish, release audits, resilient content, purposeful motion, and bounded visual QA.
+
 ### Planned
 
 - More Google Workspace add-on examples.

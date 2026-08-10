@@ -1,0 +1,8 @@
+interface:
+  display_name: "Apps Script Design Research"
+  short_description: "Turn Dribbble inspiration into original UI briefs"
+  brand_color: "#EA4C89"
+  default_prompt: "Use $apps-script-design-research to research visual references and produce an original, implementation-ready Apps Script UI brief."
+policy:
+  allow_implicit_invocation: true
+
