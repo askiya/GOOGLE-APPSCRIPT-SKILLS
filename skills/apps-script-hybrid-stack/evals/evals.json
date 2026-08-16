@@ -1,0 +1,29 @@
+{
+  "skill_name": "apps-script-hybrid-stack",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Migrate a pesantren management app from Sheets-as-database (5,000 students, 50 columns, 20 teachers accessing daily) to a scalable hybrid architecture. The app tracks attendance, grades, payments, and dorm assignments. Budget must remain $0. Images and report cards are stored in Google Drive.",
+      "expected_output": "Pattern selection with rationale (likely Pattern A or B based on relational needs), free-tier capacity calculation showing headroom, adapter code for the chosen service, dual-write migration plan, quota monitoring setup, and Google Drive integration for file storage. Should identify that 20 teachers × ~200 reads/day = 4,000 reads well within Firestore's 50K limit or Supabase's unlimited API.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "Build a small e-commerce catalog (500 products, product images, shopping cart) as a PWA. Frontend must load fast globally. Backend is Google Apps Script. Budget is $0. Expect up to 2,000 daily visitors.",
+      "expected_output": "Composite pattern recommendation (Pattern C + A or C + B): Cloudflare Pages for static frontend, Workers as edge proxy with KV caching, GAS backend for cart/order logic, Firestore or Supabase for product data, R2 for product images (zero egress), Google Drive for order documents. Cache-hit ratio calculation showing 2,000 users is feasible. Template adapter code for the chosen DB and Cloudflare Worker config.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Our GAS web app processes form submissions that trigger a 10-step workflow (validate, enrich data, generate PDF, send emails, update 3 sheets, notify Slack). Each full run takes ~8 minutes, exceeding the 6-minute GAS limit. We need to keep using GAS. How do we fix this without spending money?",
+      "expected_output": "Pattern E recommendation (Upstash QStash for job queue). Break the workflow into idempotent chunks of < 5 minutes each. First chunk runs in doPost, enqueues remaining steps to QStash with the GAS doPost URL as callback. Each callback processes the next chunk and enqueues the following one. Include checkpointing via Script Properties, idempotency keys, and error recovery. Template code using qstashPublish and handleQStashCallback.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "Design a multi-tenant SaaS application for 50 small laundry businesses. Each tenant has their own data (customers, orders, inventory). Need proper data isolation, user auth, and the ability to add tenants without code changes. Must be free or near-free.",
+      "expected_output": "Pattern evaluation comparing tenant-per-database (Turso, 500 DBs free) vs shared-database-with-RLS (Supabase) vs collection-per-tenant (Firestore). Should recommend either Pattern D (Turso: 50 DBs out of 500 free) or Pattern B (Supabase with RLS policies). Include auth strategy, tenant provisioning flow, data isolation verification, and the upgrade path when exceeding 50 tenants. Warn about Supabase inactivity pause and recommend keep-alive.",
+      "files": []
+    }
+  ]
+}

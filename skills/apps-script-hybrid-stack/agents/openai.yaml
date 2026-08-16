@@ -1,0 +1,7 @@
+interface:
+  display_name: "Apps Script Hybrid Stack"
+  short_description: "Scale Apps Script with free-tier external services"
+  brand_color: "#FF6D00"
+  default_prompt: "Use $apps-script-hybrid-stack to design a hybrid architecture combining Apps Script with free-tier external services."
+policy:
+  allow_implicit_invocation: true
