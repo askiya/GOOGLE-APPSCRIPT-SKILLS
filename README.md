@@ -4,7 +4,7 @@
 
 # Google Apps Script Skills
 
-Koleksi **15 agent skills** modular untuk merancang, meriset arah visual, membangun, mengamankan, menguji, mengoptimalkan, dan men-deploy aplikasi Google Apps Script yang siap produksi.
+Koleksi **16 agent skills** modular untuk merancang, meriset arah visual, membangun, mengamankan, menguji, mengoptimalkan, men-deploy, dan **menskala** aplikasi Google Apps Script yang siap produksi.
 
 [![Validate](https://github.com/askiya/GOOGLE-APPSCRIPT-SKILLS/actions/workflows/validate.yml/badge.svg)](https://github.com/askiya/GOOGLE-APPSCRIPT-SKILLS/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -42,6 +42,7 @@ Repository ini mengubah empat prompt besar yang bercampur menjadi skill kecil da
 | [`apps-script-saas`](skills/apps-script-saas/) | Mendesain aplikasi multi-tenant, roles, entitlements, tenant isolation, audit, dan lifecycle. |
 | [`apps-script-ai-integration`](skills/apps-script-ai-integration/) | Menghubungkan model AI secara aman dengan structured output, budget, privacy, dan fallback. |
 | [`apps-script-debugging-migration`](skills/apps-script-debugging-migration/) | Mendiagnosis error, trigger, auth, quota, deployment, V8, dan memigrasikan proyek lama. |
+| [`apps-script-hybrid-stack`](skills/apps-script-hybrid-stack/) | Menggabungkan Apps Script dengan layanan free-tier (Firebase, Supabase, Cloudflare, Turso, Upstash, MongoDB, Neon, Vercel) untuk skalabilitas hybrid tanpa biaya. |
 
 ## Instalasi
 
@@ -112,7 +113,90 @@ Codex memindai `.agents/skills` dari working directory sampai repository root. I
 
 Repo ini juga memiliki [`.codex-plugin/plugin.json`](.codex-plugin/plugin.json) dan folder `skills/`, sehingga siap dipakai sebagai skills-only plugin dalam workflow plugin lokal/publishing yang didukung Codex. Manifest plugin divalidasi bersama seluruh skill.
 
+### Opsi E — Antigravity IDE / Gemini CLI (Google)
+
+Antigravity dan Gemini CLI menggunakan sistem **customization discovery** yang memuat skill secara otomatis dari lokasi tertentu. Ada 3 cara pemasangan:
+
+#### E1 — Global (semua project)
+
+Salin seluruh folder `skills/` ke direktori global Antigravity:
+
+```powershell
+# Windows
+Copy-Item -Recurse .\skills\* "$env:USERPROFILE\.gemini\config\skills\"
+```
+
+```bash
+# macOS/Linux
+cp -r skills/* ~/.gemini/config/skills/
+```
+
+Struktur akhir:
+
+```text
+~/.gemini/config/
+└── skills/
+    ├── apps-script-architect/
+    │   ├── SKILL.md
+    │   ├── agents/
+    │   ├── evals/
+    │   └── references/
+    ├── apps-script-hybrid-stack/
+    │   ├── SKILL.md
+    │   ├── agents/
+    │   ├── evals/
+    │   ├── references/
+    │   └── templates/
+    └── ... (16 skill total)
+```
+
+Skill global berlaku di **semua workspace** yang dibuka dengan Antigravity.
+
+#### E2 — Per-workspace (satu project saja)
+
+Salin skill ke folder `.agents/skills/` di root workspace project kamu:
+
+```powershell
+# Windows — di root project Apps Script kamu
+mkdir -Force .agents\skills
+Copy-Item -Recurse "C:\path\to\GOOGLE-APPSCRIPT-SKILLS\skills\*" ".agents\skills\"
+```
+
+```bash
+# macOS/Linux
+mkdir -p .agents/skills
+cp -r /path/to/GOOGLE-APPSCRIPT-SKILLS/skills/* .agents/skills/
+```
+
+Antigravity otomatis memindai `.agents/skills/` dari working directory hingga root `.git`. Skill workspace memiliki prioritas lebih tinggi dari skill global.
+
+#### E3 — Buka repo ini langsung sebagai workspace
+
+Cara paling mudah: **buka folder repo ini langsung di Antigravity IDE** sebagai workspace.
+
+```text
+Antigravity IDE → File → Open Folder → pilih GOOGLE-APPSCRIPT-SKILLS/
+```
+
+Karena repo ini memiliki `AGENTS.md` di root dan folder `skills/`, Antigravity akan **menemukan semua 16 skill secara otomatis** tanpa copy apa pun.
+
+#### Verifikasi skill terpasang
+
+Setelah instalasi, Antigravity menampilkan daftar skill yang tersedia di awal setiap percakapan. Kamu akan melihat output seperti:
+
+```text
+Available skills:
+- apps-script-architect (...)
+- apps-script-hybrid-stack (...)
+- apps-script-web-app (...)
+... (16 skill)
+```
+
+Jika skill belum muncul, restart Antigravity IDE atau buka ulang workspace.
+
 ## Cara menggunakan skill
+
+### Codex / ChatGPT
 
 Codex dapat memilih skill otomatis berdasarkan deskripsinya. Untuk hasil yang eksplisit, sebutkan nama skill dengan `$`:
 
@@ -132,6 +216,69 @@ lalu implementasikan batching dan continuation trigger yang aman.
 ```
 
 Di Codex CLI atau IDE extension, gunakan `/skills` untuk melihat skill yang tersedia atau ketik `$` lalu pilih skill.
+
+### Antigravity IDE / Gemini CLI (Google)
+
+Di Antigravity, skill dimuat secara otomatis berdasarkan **deskripsi** di YAML frontmatter. Agent akan memilih skill yang paling relevan dengan permintaan kamu, atau kamu bisa menyebut skill secara eksplisit:
+
+**Arsitektur & perencanaan:**
+
+```text
+Baca skill apps-script-architect, lalu rancang aplikasi inventory approval
+untuk 300 user dengan data di Sheets.
+```
+
+**Hybrid stack & skalabilitas (skill baru!):**
+
+```text
+Baca skill apps-script-hybrid-stack, lalu desain arsitektur hybrid
+untuk aplikasi pesantren yang butuh database Firestore, file di Google Drive,
+dan frontend di Cloudflare Pages. Budget harus $0.
+```
+
+**Keamanan:**
+
+```text
+Baca skill apps-script-security, lalu audit keamanan project ini.
+Fokus pada OAuth scopes, credential storage, dan input validation.
+```
+
+**Performa:**
+
+```text
+Baca skill apps-script-performance, lalu optimasi proses 50.000 baris
+yang timeout di trigger harian.
+```
+
+**Deployment:**
+
+```text
+Baca skill apps-script-clasp-deployment, lalu siapkan CI/CD pipeline
+untuk push, version, dan deploy via clasp.
+```
+
+> **Cara kerja di Antigravity:** Agent membaca daftar skill yang tersedia di awal percakapan. Ketika permintaan cocok dengan deskripsi skill, agent akan otomatis membaca file `SKILL.md` dan mengikuti instruksinya. Kamu juga bisa secara eksplisit meminta agent membaca skill tertentu.
+
+### Daftar lengkap 16 skill dan kapan memanggilnya
+
+| # | Skill | Panggil ketika... |
+|---|-------|-------------------|
+| 1 | `apps-script-architect` | Merancang arsitektur sistem baru atau review arsitektur yang ada |
+| 2 | `apps-script-web-app` | Membangun web app dengan HTML Service, doGet/doPost, API |
+| 3 | `apps-script-sheets-data-layer` | Menjadikan Sheets sebagai database dengan batch I/O dan locks |
+| 4 | `apps-script-automation` | Membuat trigger, workflow otomatis, queue, dan retry |
+| 5 | `apps-script-design-research` | Riset inspirasi UI/UX dari Dribbble untuk Apps Script |
+| 6 | `apps-script-ui-ux` | Mendesain UI responsif dan accessible di HTML Service |
+| 7 | `apps-script-pwa` | Merencanakan PWA dengan batasan Apps Script |
+| 8 | `apps-script-security` | Audit keamanan: OAuth, secrets, XSS, injection, abuse |
+| 9 | `apps-script-performance` | Optimasi: batching, cache, pagination, timeout |
+| 10 | `apps-script-testing` | Unit test, integration test, smoke test, release gates |
+| 11 | `apps-script-clasp-deployment` | Setup clasp, CI/CD, versioning, deployment, rollback |
+| 12 | `apps-script-integrations` | Integrasi Workspace services, webhook, REST API |
+| 13 | `apps-script-saas` | Multi-tenant SaaS: roles, isolation, entitlements |
+| 14 | `apps-script-ai-integration` | Koneksi AI/LLM: structured output, budget, privacy |
+| 15 | `apps-script-debugging-migration` | Diagnosis error, migrasi V8, troubleshooting |
+| 16 | `apps-script-hybrid-stack` | **Arsitektur hybrid: Firebase, Supabase, Cloudflare, Turso, Upstash, MongoDB, Neon, Vercel — semua free tier** |
 
 ## Tutorial implementasi end-to-end
 
@@ -338,18 +485,20 @@ Repo komponen pihak ketiga tidak di-vendor secara massal. Setiap sumber GitHub h
 ```text
 .
 ├── .codex-plugin/plugin.json
+├── AGENTS.md                      ← aturan repo (Antigravity/Gemini)
 ├── skills/
 │   └── <skill-name>/
-│       ├── SKILL.md
-│       ├── agents/openai.yaml
-│       ├── evals/evals.json
-│       └── references/
+│       ├── SKILL.md               ← instruksi utama skill
+│       ├── agents/openai.yaml     ← konfigurasi agent
+│       ├── evals/evals.json       ← skenario evaluasi
+│       ├── references/            ← dokumentasi pendukung
+│       └── templates/             ← template kode (opsional)
 ├── templates/
 ├── scripts/
 ├── docs/
 ├── .github/
-├── README.md
-└── README.en.md
+├── README.md                      ← panduan utama (Indonesia)
+└── README.en.md                   ← panduan ringkas (English)
 ```
 
 ## Validasi repository
@@ -388,6 +537,7 @@ GitHub Actions menjalankan validasi yang sama untuk setiap push dan pull request
 
 - [OpenAI: Build skills](https://learn.chatgpt.com/docs/build-skills)
 - [OpenAI: Build plugins](https://learn.chatgpt.com/docs/build-plugins)
+- [Google Antigravity: Customizations](https://developers.google.com/gemini/antigravity)
 - [Google Apps Script: Best practices](https://developers.google.com/apps-script/guides/support/best-practices)
 - [Google Apps Script: Web apps](https://developers.google.com/apps-script/guides/web)
 - [Google Apps Script: Authorization](https://developers.google.com/apps-script/guides/services/authorization)

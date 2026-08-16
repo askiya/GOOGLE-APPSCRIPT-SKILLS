@@ -2,7 +2,7 @@
 
 # Google Apps Script Skills
 
-A production-focused collection of 15 modular agent skills for researching visual direction, designing, building, securing, testing, optimizing, and deploying Google Apps Script applications.
+A production-focused collection of **16 modular agent skills** for researching visual direction, designing, building, securing, testing, optimizing, deploying, and **scaling** Google Apps Script applications.
 
 [Bahasa Indonesia](README.md) · [Implementation guide](docs/IMPLEMENTATION-GUIDE.md) · [Contributing](CONTRIBUTING.md)
 
@@ -25,6 +25,7 @@ A production-focused collection of 15 modular agent skills for researching visua
 | [`apps-script-saas`](skills/apps-script-saas/) | Multi-tenant boundaries, roles, entitlements, isolation, audit, and lifecycle. |
 | [`apps-script-ai-integration`](skills/apps-script-ai-integration/) | Secure AI calls, structured output, budgets, privacy, and fallbacks. |
 | [`apps-script-debugging-migration`](skills/apps-script-debugging-migration/) | Diagnosis and controlled migration for auth, quotas, triggers, deployment, and V8. |
+| [`apps-script-hybrid-stack`](skills/apps-script-hybrid-stack/) | Combine Apps Script with free-tier services (Firebase, Supabase, Cloudflare, Turso, Upstash, MongoDB, Neon, Vercel) for scalable hybrid architectures at zero cost. |
 
 ## Install
 
@@ -50,7 +51,38 @@ Install one skill by passing its name to the installer. The default target is `~
 
 For repository-only discovery, copy selected skills into `<your-repo>/.agents/skills/`. The root [plugin manifest](.codex-plugin/plugin.json) also makes this repository ready for a skills-only plugin workflow.
 
+### Antigravity IDE / Gemini CLI (Google)
+
+Antigravity uses **customization discovery** to automatically load skills from specific locations:
+
+**Option 1 — Global (all projects):**
+
+```powershell
+# Windows
+Copy-Item -Recurse .\skills\* "$env:USERPROFILE\.gemini\config\skills\"
+```
+
+```bash
+# macOS/Linux
+cp -r skills/* ~/.gemini/config/skills/
+```
+
+**Option 2 — Per-workspace (one project only):**
+
+```bash
+mkdir -p .agents/skills
+cp -r /path/to/GOOGLE-APPSCRIPT-SKILLS/skills/* .agents/skills/
+```
+
+**Option 3 — Open this repo as workspace (easiest):**
+
+Open the cloned `GOOGLE-APPSCRIPT-SKILLS/` folder directly in Antigravity IDE. Since the repo has `AGENTS.md` and `skills/`, all 16 skills are discovered automatically.
+
+Verify installation — Antigravity lists available skills at the start of each conversation.
+
 ## Use
+
+### Codex / ChatGPT
 
 Invoke a skill explicitly:
 
@@ -67,6 +99,23 @@ $apps-script-performance Refactor this 50,000-row job to avoid timeouts and dupl
 ```
 
 Codex can also select a skill implicitly when the request matches its description. Use `/skills` in Codex CLI or the IDE extension to inspect available skills.
+
+### Antigravity IDE / Gemini CLI (Google)
+
+In Antigravity, skills are loaded based on their YAML frontmatter description. The agent auto-selects the most relevant skill, or you can ask explicitly:
+
+```text
+Read the apps-script-hybrid-stack skill, then design a hybrid architecture
+for an app using Firestore for data, Google Drive for files, and
+Cloudflare Pages for the frontend. Budget must be $0.
+```
+
+```text
+Read the apps-script-security skill, then audit this project's
+OAuth scopes, credential storage, and input validation.
+```
+
+> **How it works:** Antigravity injects skill names and descriptions at conversation start. When your request matches a skill's description, the agent reads its `SKILL.md` and follows its instructions automatically.
 
 ## Validate
 
